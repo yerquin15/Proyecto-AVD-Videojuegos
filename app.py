@@ -53,7 +53,7 @@ col2.metric(" Precio promedio", f"${filtered['price'].mean():.2f}")
 col3.metric(" % Positivo promedio", f"{filtered['porcentaje_positive_total'].mean()*100:.1f}%")
 col4.metric(" Tiempo promedio", f"{filtered['average_playtime_forever'].mean():.1f} hrs")
 
-st.subheader("📊 Visualización dinámica")
+st.subheader("Visualización dinámica")
 
 numeric_cols = filtered.select_dtypes(include=["int64", "float64"]).columns.tolist()
 
