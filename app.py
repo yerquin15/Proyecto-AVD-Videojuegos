@@ -110,18 +110,6 @@ ax4.legend()
 st.pyplot(fig4)
 st.divider()
 
-# --------------------------------------------------
-# NUEVO: MAPA DE CALOR DE CORRELACIÓN GLOBAL 
-# --------------------------------------------------
-st.subheader("Mapa de calor")
-numeric_cols = filtered.select_dtypes(include=["int64", "float64"]).columns
-corr = filtered[numeric_cols].corr()
-
-fig_corr, ax_corr = plt.subplots(figsize=(10, 8))
-sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".1f", linewidths=0.5, ax=ax_corr)
-ax_corr.set_title("Matriz de correlación (datos filtrados)")
-st.pyplot(fig_corr)
-st.divider()
 
 # --------------------------------------------------
 # DASHBOARD 5 y 6 (sin cambios grandes)
