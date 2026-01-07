@@ -213,4 +213,4 @@ elif len(selected_vars) == 3:
 
 else:
     st.info("Selecciona entre 1 y 3 variables para generar una visualización.")
-)
+
