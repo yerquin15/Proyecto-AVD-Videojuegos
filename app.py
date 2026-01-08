@@ -397,7 +397,7 @@ with tab3:
     # Preparar datos anuales
     annual = (
         df[
-            (df["required_age"].isin(age)) &
+            (df["required_age"].isin(age)) 
         ]
         .groupby("release_year")
         .agg(
