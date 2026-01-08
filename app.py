@@ -96,9 +96,6 @@ min_rating = st.sidebar.slider(
     step=5.0
 )
 
-st.sidebar.markdown("---")
-st.sidebar.info("Tip: Usa los filtros para explorar diferentes segmentos del mercado de videojuegos.")
-
 # Aplicar filtros
 filtered = df[
     (df["release_year"] == year) &
