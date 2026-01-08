@@ -532,7 +532,7 @@ with tab4:
 # TAB 5 - GALERÍA VISUAL
 # ==================================================
 with tab5:
-    st.header("Galería Visual y Presentación")
+    st.header("NLP")
     
     # Sección de imagen de portada
     st.subheader("Wordclouds")
