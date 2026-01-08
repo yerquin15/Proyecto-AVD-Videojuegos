@@ -509,14 +509,7 @@ with tab4:
     
     # Hallazgos clave
     col1, col2 = st.columns([2, 1])
-    
-    with col1:
-        st.subheader("Hallazgos Clave del Análisis")
-        
-        # Calcular insights automáticos
-        high_rated = filtered[filtered['porcentaje_positive_total'] > 0.85]
-        low_reviews = filtered[filtered['total_num_reviews'] < filtered['total_num_reviews'].quantile(0.25)]
-        
+         
        
     with col2:
         st.subheader("Top Performers")
