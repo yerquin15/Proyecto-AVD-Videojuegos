@@ -507,11 +507,6 @@ with tab4:
     
     st.markdown("---")
     
-    # Hallazgos clave
-    col1 = st.columns([2, 1])
-         
-       
-   with col1:
     st.subheader("Top Performers")
     
     # Identificar mejores juegos
@@ -539,6 +534,7 @@ with tab4:
             st.warning(f"No hay juegos disponibles para el año {int(year)}")
     else:
         st.warning("No hay datos suficientes")
+    
     st.markdown("---")
     
     # Tabla de datos filtrados
@@ -559,15 +555,7 @@ with tab4:
             use_container_width=True,
             hide_index=True
         )
-        
-        # Opción de descarga
-        csv = display_df.to_csv(index=False).encode('utf-8')
-        st.download_button(
-            label="Descargar datos filtrados (CSV)",
-            data=csv,
-            file_name=f"videojuegos_{year}_filtered.csv",
-            mime="text/csv"
-        )
+
 
 # ==================================================
 # TAB 5 - GALERÍA VISUAL
