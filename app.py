@@ -506,36 +506,7 @@ with tab4:
         st.plotly_chart(fig_segments, use_container_width=True)
     
     st.markdown("---")
-    
-    st.subheader("Top Performers")
-    
-    # Identificar mejores juegos
-    if 'name' in filtered.columns and len(filtered) > 0:
-        valid_games = filtered[filtered['name'].notna()]
-        
-        if len(valid_games) > 0:
-            # Mejor valorado
-            best_rated = valid_games.nlargest(1, 'porcentaje_positive_total').iloc[0]
-            st.markdown(f"**Mejor Valorado:**")
-            st.info(f"{best_rated['name']}\n\n{best_rated['porcentaje_positive_total']*100:.1f}% positive")
-            
-            # Más popular
-            most_popular = valid_games.nlargest(1, 'total_num_reviews').iloc[0]
-            st.markdown(f"**Más Popular:**")
-            st.info(f"{most_popular['name']}\n\n{int(most_popular['total_num_reviews']):,} reviews")
-            
-            # Mejor relación calidad-precio
-            valid_games_copy = valid_games.copy()
-            valid_games_copy['value_score'] = valid_games_copy['porcentaje_positive_total'] / (valid_games_copy['price'] + 1)
-            best_value = valid_games_copy.nlargest(1, 'value_score').iloc[0]
-            st.markdown(f"**Mejor Valor:**")
-            st.success(f"{best_value['name']}\n\n${best_value['price']:.2f} - {best_value['porcentaje_positive_total']*100:.1f}%")
-        else:
-            st.warning(f"No hay juegos disponibles para el año {int(year)}")
-    else:
-        st.warning("No hay datos suficientes")
-    
-    st.markdown("---")
+
     
     # Tabla de datos filtrados
     st.subheader("Datos Filtrados")
